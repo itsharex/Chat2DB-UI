@@ -1,0 +1,76 @@
+{
+  "name": "@chat2db/ui",
+  "version": "0.0.1",
+  "description": "A react library developed with dumi",
+  "homepage": "https://github.com/chat2db/chat2db-ui",
+  "license": "MIT",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "files": [
+    "es"
+  ],
+  "scripts": {
+    "build": "father build",
+    "build:watch": "father dev",
+    "clean": "rm -rf es lib dist coverage .dumi/tmp .eslintcache pnpm-lock.yaml",
+    "dev": "dumi dev",
+    "docs:build": "dumi build",
+    "doctor": "father doctor",
+    "lint": "npm run lint:es && npm run lint:css",
+    "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
+    "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
+    "prepare": "husky install && dumi setup",
+    "prepublishOnly": "father doctor && npm run build",
+    "start": "npm run dev"
+  },
+  "lint-staged": {
+    "*.{md,json}": [
+      "prettier --write --no-error-on-unmatched-pattern"
+    ],
+    "*.{css,less}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@babel/runtime": "^7",
+    "antd": "^5.13.2",
+    "antd-style": "^3.6.1",
+    "lucide-react": "latest",
+    "rc-footer": "^0.6.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@umijs/lint": "^4.0.0",
+    "commitlint": "^17",
+    "commitlint-config-gitmoji": "^2",
+    "dumi": "^2.2.13",
+    "dumi-theme-antd-style": "latest",
+    "eslint": "^8.23.0",
+    "father": "^4.1.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "prettier-plugin-organize-imports": "^3.0.0",
+    "prettier-plugin-packagejson": "^2.2.18",
+    "stylelint": "^14.9.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "authors": [
+    "Chat2DB <Chat2DB@chat2db.ai>"
+  ]
+}
