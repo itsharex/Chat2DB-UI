@@ -9,6 +9,7 @@
     "resolveJsonModule": true,
     "paths": {
       "@@/*": [".dumi/tmp/*"],
+      "@/*": ["src/*"],
       "@chat2db/ui": ["src"],
       "@chat2db/ui/*": ["src/*", "*"]
     }

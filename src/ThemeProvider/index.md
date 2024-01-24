@@ -6,6 +6,6 @@ title: ThemeProvider
 
 ## Usage
 
-LobeHub ThemeProvider
+ThemeProvider
 
 <API></API>

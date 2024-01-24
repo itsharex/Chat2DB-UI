@@ -15,6 +15,8 @@ const themeConfig: IThemeConfig = {
 };
 
 export default defineConfig({
+  title: 'Chat2DB UI',
   outputPath: 'docs-dist',
+  npmClient: 'pnpm',
   themeConfig: themeConfig,
 });
