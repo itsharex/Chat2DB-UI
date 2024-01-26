@@ -3,7 +3,9 @@ const {
 } = require('semantic-release-config-gitmoji/lib/createConfig');
 
 const options = {
-  changelogTitle: `<a name="readme-top"></a>\n\n# Changelog`,
+  changelogTitle: `<a name="readme-top"></a>
+
+  # Changelog`,
   releaseRules: [
     { release: 'minor', type: 'feat' },
     { release: 'patch', type: 'fix' },
@@ -32,4 +34,11 @@ const options = {
 module.exports = {
   $schema: 'https://json.schemastore.org/semantic-release',
   ...createConfig(options),
+  plugins: [
+    '@semantic-release/commit-analyzer',
+    '@semantic-release/release-notes-generator',
+    '@semantic-release/changelog',
+    '@semantic-release/npm',
+    '@semantic-release/github',
+  ],
 };
