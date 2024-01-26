@@ -25,3 +25,5 @@ export {
   default as IconButtonGroup,
   type IconButtonGroupProps,
 } from './IconButtonGroup';
+
+export { default as Footer, type FooterProps } from './Footer';
