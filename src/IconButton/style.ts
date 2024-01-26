@@ -4,7 +4,7 @@ export const useStyles = createStyles(({ css, token }) => {
   return {
     normal: css`
       cursor: pointer;
-
+      color: ${token.colorTextSecondary};
       &:hover {
         color: ${token.colorText};
         background-color: ${token.colorFillSecondary};

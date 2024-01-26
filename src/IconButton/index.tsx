@@ -23,7 +23,7 @@ export interface IconButtonProps extends LucideIconProps, DivProps {
   title?: string;
   tooltipDelay?: number;
   icon: LucideIcon;
-  size: IconSizeType;
+  size?: IconSizeType;
   disable?: boolean;
 }
 
@@ -31,16 +31,16 @@ const IconButton: React.FC<IconButtonProps> = ({
   title,
   tooltipDelay = 0.8,
   icon,
-  size,
+  size = 'normal',
   disable,
   style,
   onClick,
 }) => {
   const { styles, cx } = useStyles();
   const { borderRadius, boxSize } = useMemo(() => calcSize(size), [size]);
-
   const IconContent = <Icon className={styles.icon} size={size} icon={icon} />;
-  const iconButtonBlock: ReactNode = (
+
+  const IconButtonBlock: ReactNode = (
     <Flex
       justify="center"
       align="center"
@@ -56,12 +56,12 @@ const IconButton: React.FC<IconButtonProps> = ({
       {IconContent}
     </Flex>
   );
-  if (!title) {
-    return iconButtonBlock;
-  }
+  // if (!title) {
+  //   return IconButtonBlock;
+  // }
   return (
     <Tooltip title={title} mouseEnterDelay={tooltipDelay}>
-      {iconButtonBlock}
+      {IconButtonBlock}
     </Tooltip>
   );
 };

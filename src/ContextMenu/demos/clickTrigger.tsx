@@ -1,5 +1,5 @@
-import { ContextMenu, IContextMenuMenuItem } from '@chat2db/ui';
-import { MoreVertical } from 'lucide-react';
+import { ContextMenu, IContextMenuMenuItem, IconButton } from '@chat2db/ui';
+import { MoreHorizontal } from 'lucide-react';
 import React from 'react';
 
 const menuList: IContextMenuMenuItem[] = [
@@ -60,7 +60,14 @@ export default () => {
       onCloseContextMenu={() => {
         console.log('onCloseContextMenu');
       }}
-      trigger={<MoreVertical />}
+      trigger={
+        <IconButton
+          icon={MoreHorizontal}
+          onClick={() => {
+            console.log('onClick');
+          }}
+        />
+      }
     />
   );
 };

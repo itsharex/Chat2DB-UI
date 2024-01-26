@@ -33,7 +33,6 @@ const options = {
 
 module.exports = {
   $schema: 'https://json.schemastore.org/semantic-release',
-  ...createConfig(options),
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
@@ -41,4 +40,5 @@ module.exports = {
     '@semantic-release/npm',
     '@semantic-release/github',
   ],
+  ...createConfig(options),
 };

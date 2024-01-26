@@ -61,7 +61,9 @@ const ContextMenu = memo<ContextMenuProps>(
 
     return (
       <DropdownMenu.Root open={open} onOpenChange={setOpen}>
-        <DropdownMenu.Trigger asChild>{trigger}</DropdownMenu.Trigger>
+        <DropdownMenu.Trigger asChild>
+          <div>{trigger}</div>
+        </DropdownMenu.Trigger>
         <DropdownMenu.Portal>
           <DropdownMenu.Content
             className={styles.content}
