@@ -2,6 +2,35 @@
 
 # Changelog
 
+### [Version&nbsp;1.0.1](https://github.com/chat2db/Chat2DB-UI/compare/v1.0.0...v1.0.1)
+
+<sup>Released on **2024-01-26**</sup>
+
+#### 🐛 Bug Fixes
+
+- **misc**: 修复 ContextMenu 的点击问题.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's fixed
+
+- **misc**: 修复 ContextMenu 的点击问题 ([81ddd9f](https://github.com/chat2db/Chat2DB-UI/commit/81ddd9f))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
+<a name="readme-top"></a>
+
+# Changelog
+
 # 1.0.0 (2024-01-26)
 
 ### ✨ Features
