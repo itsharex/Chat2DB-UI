@@ -19,3 +19,7 @@ export {
   type IconButtonProps,
   type IconSize,
 } from './IconButton';
+export {
+  default as IconButtonGroup,
+  type IconButtonGroupProps,
+} from './IconButtonGroup';

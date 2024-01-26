@@ -1,12 +1,8 @@
 import { DivProps } from '@/types';
 import { Flex } from 'antd';
-// import { createStyles } from 'antd-style';
 import { LevaPanel } from 'leva';
 import React from 'react';
-
-// const useStyles = createStyles(() => {
-//   return {};
-// });
+import { useStyles } from './style';
 
 export interface PlaygourndProps extends DivProps {
   /**
@@ -16,12 +12,13 @@ export interface PlaygourndProps extends DivProps {
 }
 
 const Playgournd = React.memo<PlaygourndProps>(({ levaStore, children }) => {
+  const { styles } = useStyles();
   return (
     <Flex justify="stretch" align="stretch">
       <Flex justify="center" align="center" style={{ flex: 1 }}>
         {children}
       </Flex>
-      <div>
+      <div className={styles.leva}>
         <LevaPanel fill flat store={levaStore} titleBar={false} />
       </div>
     </Flex>

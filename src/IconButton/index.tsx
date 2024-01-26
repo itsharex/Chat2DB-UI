@@ -21,6 +21,7 @@ export interface IconButtonProps extends LucideIconProps, DivProps {
    * @description 气泡展示
    */
   title?: string;
+  tooltipDelay?: number;
   icon: LucideIcon;
   size: IconSizeType;
   disable?: boolean;
@@ -28,10 +29,12 @@ export interface IconButtonProps extends LucideIconProps, DivProps {
 
 const IconButton: React.FC<IconButtonProps> = ({
   title,
+  tooltipDelay = 0.8,
   icon,
   size,
   disable,
   style,
+  onClick,
 }) => {
   const { styles, cx } = useStyles();
   const { borderRadius, boxSize } = useMemo(() => calcSize(size), [size]);
@@ -42,6 +45,7 @@ const IconButton: React.FC<IconButtonProps> = ({
       justify="center"
       align="center"
       className={cx(disable ? styles.disabled : styles.normal)}
+      onClick={disable ? undefined : onClick}
       style={{
         height: boxSize,
         width: boxSize,
@@ -55,7 +59,11 @@ const IconButton: React.FC<IconButtonProps> = ({
   if (!title) {
     return iconButtonBlock;
   }
-  return <Tooltip title={title}>{iconButtonBlock}</Tooltip>;
+  return (
+    <Tooltip title={title} mouseEnterDelay={tooltipDelay}>
+      {iconButtonBlock}
+    </Tooltip>
+  );
 };
 
 export default memo(IconButton);

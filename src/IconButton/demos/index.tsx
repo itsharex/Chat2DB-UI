@@ -15,7 +15,7 @@ export default () => {
       title: '',
       icon: {
         options: LucideIcon,
-        value: LucideIcon.AArrowDown,
+        value: LucideIcon.Copy,
       },
       size: {
         options: ['large', 'normal', 'small'],
@@ -28,7 +28,12 @@ export default () => {
   );
   return (
     <Playgournd levaStore={store}>
-      <IconButton {...control} />
+      <IconButton
+        {...control}
+        onClick={() => {
+          console.log('click IconButton');
+        }}
+      />
     </Playgournd>
   );
 };

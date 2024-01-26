@@ -19,7 +19,7 @@ export const calcSize = (size?: IconSize) => {
       strokeWidth = 2;
       break;
     case 'small':
-      boxSize = 32;
+      boxSize = 24;
       borderRadius = 4;
       iconSize = 14;
       strokeWidth = 1.5;

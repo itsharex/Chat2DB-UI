@@ -17,7 +17,7 @@ export const useStyles = createStyles(({ css, token }) => {
     icon: css`
       transition: scale 400ms ${token.motionEaseOut};
       &:active {
-        scale: 0.95;
+        scale: 0.9;
       }
     `,
   };
