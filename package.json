@@ -1,6 +1,6 @@
 {
   "name": "@chat2db/ui",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A react library developed with dumi",
   "homepage": "https://github.com/chat2db/chat2db-ui",
   "license": "MIT",
