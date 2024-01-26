@@ -1,21 +1,35 @@
-module.exports = {
-  branches: ['main'], // 指定在哪个分支下要执行发布操作
-  plugins: [
-    '@semantic-release/commit-analyzer', // 解析 commit 信息，默认就是 Angular 规范
-    '@semantic-release/release-notes-generator',
-    [
-      '@semantic-release/changelog',
-      {
-        changelogFile: 'CHANGELOG.md', // 把发布日志写入该文件
-      },
-    ],
-    '@semantic-release/npm', // 发布到NPM
-    '@semantic-release/github',
-    [
-      '@semantic-release/git',
-      {
-        assets: ['CHANGELOG.md', 'package.json'], // 前面说到日志记录和版本好是新增修改的，需要 push 回 Git
-      },
-    ],
+const {
+  createConfig,
+} = require('semantic-release-config-gitmoji/lib/createConfig');
+
+const options = {
+  changelogTitle: `<a name="readme-top"></a>\n\n# Changelog`,
+  releaseRules: [
+    { release: 'minor', type: 'feat' },
+    { release: 'patch', type: 'fix' },
+    { release: 'patch', type: 'perf' },
+    { release: 'patch', type: 'style' },
+    { release: 'patch', type: 'refactor' },
+    { release: 'patch', type: 'build' },
+    { release: 'patch', scope: 'README', type: 'docs' },
+    { release: 'patch', scope: 'README.md', type: 'docs' },
+    { release: false, type: 'docs' },
+    { release: false, type: 'test' },
+    { release: false, type: 'ci' },
+    { release: false, type: 'chore' },
+    { release: false, type: 'wip' },
+    { release: 'major', type: 'BREAKING CHANGE' },
+    { release: 'major', scope: 'BREAKING CHANGE' },
+    { release: 'major', subject: '*BREAKING CHANGE*' },
+    { release: 'patch', subject: '*force release*' },
+    { release: 'patch', subject: '*force patch*' },
+    { release: 'minor', subject: '*force minor*' },
+    { release: 'major', subject: '*force major*' },
+    { release: false, subject: '*skip release*' },
   ],
+};
+
+module.exports = {
+  $schema: 'https://json.schemastore.org/semantic-release',
+  ...createConfig(options),
 };
