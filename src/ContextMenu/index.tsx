@@ -48,7 +48,7 @@ const ContextMenu = memo<ContextMenuProps>(
       handleCloseContextMenu();
     };
 
-    const handleKeyDown = (event: KeyboardEvent) => {
+    const handleKeyDown = (event: any) => {
       if (event.ctrlKey || event.metaKey) {
         event.preventDefault();
         const curKey = event.key.toLowerCase();

@@ -21,6 +21,7 @@
     "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
     "prepare": "husky install && dumi setup",
     "prepublishOnly": "father doctor && npm run build",
+    "release": "semantic-release",
     "start": "npm run dev"
   },
   "lint-staged": {
@@ -50,7 +51,8 @@
     "lucide-react": "latest",
     "rc-footer": "^0.6.8",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.1.8"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
@@ -73,6 +75,7 @@
     "prettier": "^2.7.1",
     "prettier-plugin-organize-imports": "^3.0.0",
     "prettier-plugin-packagejson": "^2.2.18",
+    "semantic-release": "^21",
     "stylelint": "^14.9.1"
   },
   "publishConfig": {
