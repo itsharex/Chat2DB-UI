@@ -1,4 +1,4 @@
-import { Footer, FooterProps } from '@lobehub/ui';
+import { Footer, FooterProps } from '@chat2db/ui';
 import React from 'react';
 
 const columns: FooterProps['columns'] = [
